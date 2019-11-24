@@ -33,11 +33,7 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.radio_button :role, 'owner', autofocus: true %> Owner <br>
-    <%= f.radio_button :role, 'customer', autofocus: true %> Customer <br>
-  </div>
+ 
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
