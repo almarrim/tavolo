@@ -1,15 +1,16 @@
 <%= link_to "add restaurant", new_restaurant_path %>
 <%= link_to  "Sign out", destroy_user_session_path , method: :delete %>
 <%= link_to  "Sign in", new_user_session_path %>
-<%
-=begin%>
+
+<%= @user%>
+
  <%= link_to  "delete restaurant", destroy_user_session_path %> 
-<%
-=end%>
+
 <% @restaurants.each do |res| %>
 <h1>
 <%= res.name %>
 </h1>
 <%= image_tag(res.img, size: "200x200", alt: "res Image") %>
 <a data-confirm="Are you sure you want to delete ?" data-method="delete" href="/restaurants/<%= res.id %>" rel="nofollow">delete</a>
+
 <%end%>
