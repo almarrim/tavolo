@@ -3,7 +3,8 @@ class RestaurantsController < ApplicationController
     before_action :is_current_owner, only: [:destroy]
     def index
       @restaurants = Restaurant.all
-      @user= current_user.role
+      @user= current_user
+      
     end
 
     def show
