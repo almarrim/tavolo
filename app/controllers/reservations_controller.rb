@@ -1,26 +1,34 @@
 class ReservationsController < ApplicationController
     def index
         @reservations = Reservation.all
+        @user = current_user
     end
 
     def show
-         
+        @reservation = Reservation.find(params[:id])
+        @user = current_user
+
     end
 
     def new
-        @user = User.find(params[:user_id])
         @reservation = Reservation.new
+        @user = current_user
     end
 
     def create 
-        user = User.find(params[:reservation][:user_id])
-        Reservation.create(reservation_params)
-        
-        redirect_to reservations
+
+        @reservation=current_user.reservations.create(reservation_params)
+       if @reservation.save
+        redirect_to reservations_path
+       else
+        render :new
+       end
+
     end
 
     def edit
         @reservation = Reservation.find(params[:id])
+        @name = current_user
     end
 
     def update
