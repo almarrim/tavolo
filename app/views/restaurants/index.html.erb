@@ -1,18 +1,26 @@
 <% if current_user.role == "owner" %>
-<%= link_to "add restaurant", new_restaurant_path %>
+    <%= link_to "add a restaurant", new_restaurant_path %>
 <%end%>
-<%= link_to  "Sign out", destroy_user_session_path , method: :delete %>
-<%= link_to  "Sign in", new_user_session_path %>
+<%if current_user.role == "customer"%>
+    <%= link_to "Reservations", reservations_path%>
+<%end%>
 
-<%= @user.role%>
-<h1> Hello <%= @user.name %> </h1>
 
 <% @restaurants.each do |res| %>
-<h1>
-<%= res.name %>
-</h1>
-<%= image_tag(res.img, size: "200x200", alt: "res Image") %>
-<% if current_user.role == "owner" %>
-<a data-confirm="Are you sure you want to delete ?" data-method="delete" href="/restaurants/<%= res.id %>" rel="nofollow">delete</a>
-<%end%>
+    <ul>
+        <%if current_user.role == "customer"%>
+            <li>
+                <h2><%= res.name %></h2>
+                <%= image_tag(res.img, size: "200x200", alt: "res Image") %>
+                <%= link_to "Make Reservation", new_reservation_path(:restaurant_id => res.id, :user_id => current_user.id)%>
+            </li>
+        <%end%>
+        <% if current_user.role == "owner" && current_user.id == res.user_id %>
+            <li>
+                <h2><%= res.name %></h2>
+                <%= image_tag(res.img, size: "200x200", alt: "res Image") %>
+                <a data-confirm="Are you sure you want to delete ?" data-method="delete" href="/restaurants/<%= res.id %>" rel="nofollow">delete</a>
+            </li>
+        <%end%>
+    </ul>
 <%end%>

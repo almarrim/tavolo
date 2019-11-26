@@ -1,4 +1,12 @@
-<h1> this is the show</h1>
-<%= @reservation.user.name%>
-</br>
-You have a reservation on <%= @reservation.start_time%>
+<h2> <%= @reservation.restaurant.name%> Reservation</h2>
+<br>
+<p>
+    Your reservation is on <strong><%= @reservation.start_time%></strong> 
+    <br>
+    <%= image_tag(@reservation.restaurant.img, size: "200x200", alt: "res Image") %>
+    <br>
+    <%= link_to "edit", edit_reservation_path(@reservation)%>
+    <a data-confirm="Are you sure you want to delete ?" data-method="delete" href="/reservations/<%= @reservation.id %>" rel="nofollow">delete</a>
+</p>
+<%= link_to "Reservations", reservations_path%>
+<%= link_to "Restaurants", restaurants_path %>
