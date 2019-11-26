@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   get 'static', to: 'static#index'
   get 'static/index'
-  get 'static/not_index'
-  # root to: "static#index"
   resources :reservations, :restaurants
   root "static#index"
   devise_for :users

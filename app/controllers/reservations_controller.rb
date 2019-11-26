@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+    before_action :is_in
     def index
         @reservations = Reservation.all
         @user = current_user
@@ -51,5 +52,12 @@ class ReservationsController < ApplicationController
     private
     def reservation_params
         params.require(:reservation).permit(:start_time, :user_id, :restaurant_id)
+    end
+    def is_in
+        if user_signed_in?
+          return true
+        else
+          redirect_to root_path
+        end
       end
 end
