@@ -1,6 +1,10 @@
 <% if current_user.role == "owner" %>
 <%= link_to "add restaurant", new_restaurant_path %>
 <%end%>
+<%if current_user.role == "customer"%>
+<%= link_to "Reservations", reservations_path%>
+<%end%>
+
 <%= link_to  "Sign out", destroy_user_session_path , method: :delete %>
 <%= link_to  "Sign in", new_user_session_path %>
 
@@ -10,9 +14,12 @@
 <% @restaurants.each do |res| %>
 <h1>
 <%= res.name %>
+<%if current_user.role == "customer"%>
+<%= link_to "Make Reservation", new_reservation_path(:restaurant_id => res.id, :user_id => current_user.id)%>
+<%end%>
 </h1>
 <%= image_tag(res.img, size: "200x200", alt: "res Image") %>
-<% if current_user.role == "owner" %>
+<% if current_user.role == "owner" && current_user.id == res.user_id %>
 <a data-confirm="Are you sure you want to delete ?" data-method="delete" href="/restaurants/<%= res.id %>" rel="nofollow">delete</a>
 <%end%>
 <%end%>

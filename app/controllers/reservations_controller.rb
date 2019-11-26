@@ -12,11 +12,14 @@ class ReservationsController < ApplicationController
 
     def new
         @reservation = Reservation.new
+        @restaurant = Restaurant.find(params[:restaurant_id])
         @user = current_user
     end
 
-    def create 
-
+    def create
+        # @reservation = Reservation.new()
+        @user = current_user
+        @restaurant = Restaurant.find(params[:reservation][:restaurant_id])
         @reservation=current_user.reservations.create(reservation_params)
        if @reservation.save
         redirect_to reservations_path
@@ -29,12 +32,12 @@ class ReservationsController < ApplicationController
     def edit
         @reservation = Reservation.find(params[:id])
         @name = current_user
+        @restaurant = Restaurant.find(@reservation.restaurant_id)
     end
 
     def update
         @reservation = Reservation.find(params[:id])
         @reservation.update(reservation_params)
-    
         redirect_to @reservation
       end
 

@@ -1,4 +1,7 @@
-<h1> this is the show</h1>
+<h1> <%= @reservation.restaurant.name%> Reservation</h1>
 <%= @reservation.user.name%>
 </br>
-You have a reservation on <%= @reservation.start_time%>
+You have a reservation on <%= @reservation.start_time%> <%= link_to "edit", edit_reservation_path(@reservation)%>
+<a data-confirm="Are you sure you want to delete ?" data-method="delete" href="/reservations/<%= @reservation.id %>" rel="nofollow">delete</a>
+<%= link_to "Reservations", reservations_path%>
+<%= link_to "Restaurants", restaurants_path %>
