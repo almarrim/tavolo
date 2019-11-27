@@ -1,24 +1,49 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Project Name:
+Tavolo reservation
 
-Things you may want to cover:
+# Project Image:
+[Project Image]()
 
-* Ruby version
+### Table of Contents:
+- [Description](#description)
+- [Technology](#technology)
+- [Installation](#installation)
+- [Demo](#demo)
+- [Reference](#reference)
+- [Teams of Project](#teams-of-project)
 
-* System dependencies
+# Description:
 
-* Configuration
 
-* Database creation
+# Technology:
+- Rails
+- Ruby
+- JavaScript
+- CSS
+- HTML
 
-* Database initialization
 
-* How to run the test suite
+# Demo:
 
-* Services (job queues, cache servers, search engines, etc.)
+## Installation:
+- `rails version 5.2.3 `
+- `ruby version 2.6.5p114`
+- `gem 'devise'`
+- `bundle install`
+- `rails db:migrate`
 
-* Deployment instructions
+### Reference
+- [Device.com](https://github.com/plataformatec/devise)
+- [Rails.com](https://guides.rubyonrails.org/v5.2/)
+- [Bootswatch](https://bootswatch.com/)
 
-* ...
+
+# Teams of Project:
+
+- GitHub - [Mohammed Almarri](https://github.com/almarrim)
+- GitHub - [Fahad Abdullah](https://github.com/fahadaldawish)
+- GitHub - [Mesfer AlQahtani](https://github.com/MNQ249)
+- GitHub - [Nawal Bin Dawood](https://github.com/nawaldee21)
+
+[Back To The Top](#Project-Name)
