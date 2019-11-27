@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+    before_action :is_in
     before_action :is_owner, only: [:new, :create]
     before_action :is_current_owner, only: [:destroy]
     def index
@@ -54,6 +55,12 @@ class RestaurantsController < ApplicationController
         else
             redirect_to restaurants_path
         end
-
+    end
+    def is_in
+      if user_signed_in?
+        return true
+      else
+        redirect_to root_path
+      end
     end
 end

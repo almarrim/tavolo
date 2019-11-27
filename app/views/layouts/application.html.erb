@@ -10,8 +10,25 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <nav>
+      <ul>
+        <li><%= link_to  "Your Account", edit_user_registration_path %></li>
+        <li><%= link_to "Sing Up", new_user_registration_path %></li>
+        <li><%= link_to "Sing In", new_user_session_path %></li>
+        <li><%= link_to "Sing Out", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </nav>
+    <%if current_user%>
+      <h3>Hello <%= current_user.name %>, you are logged in as 
+          <%if current_user.role == "customer"%>
+            a <%=current_user.role%> and you have <%=current_user.reservations.count%> <%if current_user.reservations.count == 1%> reservation <%else%> reservations <%end%>
+          <%else%>
+            an <%=current_user.role%> and you have <%=current_user.restaurants.count%> <%if current_user.restaurants.count == 1%> restaurant <%else%> restaurants <%end%>
+          <%end%>
+      </h3>
+    <%end%>
     <%= yield %>
   </body>
 </html>
