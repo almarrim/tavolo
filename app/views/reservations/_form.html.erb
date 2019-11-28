@@ -5,7 +5,8 @@
   </div>
   
   <%= f.hidden_field :restaurant_id, :value => @restaurant.id %>
-  <%= f.submit "Submit", :class => "btn waves-effect waves-light btn btn-light"%>
+  <%= f.submit "Submit", :class => "btn waves-effect waves-light btn btn-light general"%>
 <% end %>
-<%= link_to "Reservations", reservations_path%>
-<%= link_to "Restaurants", restaurants_path %>
+
+<%= link_to "Reservations", reservations_path, :class => "btn waves-effect waves-light btn btn-light general"%>
+<%= link_to "Restaurants", restaurants_path, :class => "btn waves-effect waves-light btn btn-light general" %>
