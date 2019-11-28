@@ -25,8 +25,8 @@ Tavolo reservation is an arrangement made in advance to have a table available a
 
 
 # Demo
-
-## Installation:
+[Tavolo](https://tawla.herokuapp.com/)
+## Installation
 - `rails version 5.2.3 `
 - `ruby version 2.6.5p114`
 - `gem 'devise'`
