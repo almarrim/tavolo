@@ -1,11 +1,11 @@
 
-# Project Name:
-Tavolo reservation
+# Project Name
+Tavolo Reservation
 
-# Project Image:
+# Project Image
 [Project Image]()
 
-### Table of Contents:
+### Table of Contents
 - [Description](#description)
 - [Technology](#technology)
 - [Installation](#installation)
@@ -13,10 +13,10 @@ Tavolo reservation
 - [Reference](#reference)
 - [Teams of Project](#teams-of-project)
 
-# Description:
+# Description
+Tavolo reservation is an arrangement made in advance to have a table available at a restaurant. By travolo-app allow user make reservation in any where and any time, and owner can be have many restaurants, even user can have many reservation in many resturants.
 
-
-# Technology:
+# Technology
 - Rails
 - Ruby
 - JavaScript
@@ -24,7 +24,7 @@ Tavolo reservation
 - HTML
 
 
-# Demo:
+# Demo
 
 ## Installation:
 - `rails version 5.2.3 `
@@ -39,7 +39,7 @@ Tavolo reservation
 - [Bootswatch](https://bootswatch.com/)
 
 
-# Teams of Project:
+# Team of Project
 
 - GitHub - [Mohammed Almarri](https://github.com/almarrim)
 - GitHub - [Fahad Abdullah](https://github.com/fahadaldawish)
