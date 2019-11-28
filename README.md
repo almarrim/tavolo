@@ -1,24 +1,49 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Project Name
+Tavolo Reservation
 
-Things you may want to cover:
+# Project Image
+[Project Image]()
 
-* Ruby version
+### Table of Contents
+- [Description](#description)
+- [Technology](#technology)
+- [Installation](#installation)
+- [Demo](#demo)
+- [Reference](#reference)
+- [Teams of Project](#teams-of-project)
 
-* System dependencies
+# Description
+Tavolo reservation is an arrangement made in advance to have a table available at a restaurant. By travolo-app allow user make reservation in any where and any time, and owner can be have many restaurants, even user can have many reservation in many resturants.
 
-* Configuration
+# Technology
+- Rails
+- Ruby
+- JavaScript
+- CSS
+- HTML
 
-* Database creation
 
-* Database initialization
+# Demo
 
-* How to run the test suite
+## Installation:
+- `rails version 5.2.3 `
+- `ruby version 2.6.5p114`
+- `gem 'devise'`
+- `bundle install`
+- `rails db:migrate`
 
-* Services (job queues, cache servers, search engines, etc.)
+### Reference
+- [Device.com](https://github.com/plataformatec/devise)
+- [Rails.com](https://guides.rubyonrails.org/v5.2/)
+- [Bootswatch](https://bootswatch.com/)
 
-* Deployment instructions
 
-* ...
+# Team of Project
+
+- GitHub - [Mohammed Almarri](https://github.com/almarrim)
+- GitHub - [Fahad Abdullah](https://github.com/fahadaldawish)
+- GitHub - [Mesfer AlQahtani](https://github.com/MNQ249)
+- GitHub - [Nawal Bin Dawood](https://github.com/nawaldee21)
+
+[Back To The Top](#Project-Name)
