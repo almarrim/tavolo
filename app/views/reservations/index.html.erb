@@ -1,18 +1,20 @@
-<h1>Your Reservations</h1>
+<h2>Your Reservations</h2>
+<div class="all">
 <ul>
   <% @reservations.each do |reservation| %>
     <% if current_user.id == reservation.user_id%>
-      <li>
-        <%= link_to reservation.restaurant.name, reservation_path(reservation) %>
+      <li class="restaurant">
+        <%= link_to reservation.restaurant.name, reservation_path(reservation), :class => "btn waves-effect waves-light btn btn-light general" %>
         </br>
-        <%= image_tag(reservation.restaurant.img, size: "200x200", alt: "res Image") %>
+        <%= image_tag(reservation.restaurant.img, alt: "res Image", class:"sami") %>
         </br>
-        <%= link_to reservation.start_time, reservation_path(reservation) %>
-        <a data-confirm="Are you sure you want to delete ?" data-method="delete" href="/reservations/<%= reservation.id %>" rel="nofollow">delete</a>
+        <%= link_to reservation.start_time, reservation_path(reservation), :class => "btn waves-effect waves-light btn btn-light general" %>
+        <a class="btn waves-effect waves-light btn btn-light general" data-confirm="Are you sure you want to delete ?" data-method="delete" href="/reservations/<%= reservation.id %>" rel="nofollow">delete</a>
       </li>   
     <% end %>
   <% end %>
 </ul>
 <br>
 
-<%= link_to "Back to Restaurants", restaurants_path %>
+</div>
+<%= link_to "Back to Restaurants", restaurants_path , :class => "btn waves-effect waves-light btn btn-light general"%>

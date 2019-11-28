@@ -1,33 +1,65 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>Tavolo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+<link href="https://fonts.googleapis.com/css?family=Megrim&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <nav>
-      <ul>
-        <li><%= link_to  "Your Account", edit_user_registration_path %></li>
-        <li><%= link_to "Sing Up", new_user_registration_path %></li>
-        <li><%= link_to "Sing In", new_user_session_path %></li>
-        <li><%= link_to "Sing Out", destroy_user_session_path, method: :delete %></li>
-      </ul>
-    </nav>
+    <%
+=begin%>
+ <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> 
+<%
+=end%>
+<nav role="navigation">
+    <h1>Tavolo</h1>
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
+    
+    <!--
+    Some spans to act as a hamburger.
+    
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+      <li><%= link_to  "Your Account", edit_user_registration_path %></li>
+      <li><%= link_to "Sign Up", new_user_registration_path %></li>
+      <li><%= link_to "Sign In", new_user_session_path %></li>
+      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  </div>
+</nav>
+    <br>
     <%if current_user%>
-      <h3>Hello <%= current_user.name %>, you are logged in as 
+      <h4 class="welcome">Hello <%= current_user.name %>, you are  
           <%if current_user.role == "customer"%>
             a <%=current_user.role%> and you have <%=current_user.reservations.count%> <%if current_user.reservations.count == 1%> reservation <%else%> reservations <%end%>
           <%else%>
             an <%=current_user.role%> and you have <%=current_user.restaurants.count%> <%if current_user.restaurants.count == 1%> restaurant <%else%> restaurants <%end%>
           <%end%>
-      </h3>
+      </h4>
     <%end%>
     <%= yield %>
   </body>
